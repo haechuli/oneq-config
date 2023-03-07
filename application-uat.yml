@@ -2,12 +2,13 @@
 #  port: 8090
 
 
+
 spring:
   config:
     activate:
       on-profile: uat
   main:
-    web-application-type: none
+#    web-application-type: none
     allow-bean-definition-overriding: true
 
 

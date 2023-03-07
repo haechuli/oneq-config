@@ -3,6 +3,9 @@
 
 
 spring:
+  config:
+    activate:
+      on-profile: uat
   main:
     web-application-type: none
     allow-bean-definition-overriding: true

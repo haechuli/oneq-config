@@ -1,0 +1,63 @@
+#server:
+#  port: 8090
+
+
+spring:
+  main:
+    web-application-type: none
+    allow-bean-definition-overriding: true
+  profiles: prod
+
+  # Spring Boot 실행시 BATCH 자동 실행 못하게 설정
+  batch:
+    initialize-schema: never
+    job:
+      #      names: ${job.name:NONE}
+      enabled: true
+  cloud:
+    task:
+      initialize-enabled: false
+      batch:
+        fail-on-job-failure: true
+
+  datasource:
+    hikari:
+      main:
+        jdbc-url: ENC(gp3hdpF6SyTNrhDxm6ILFtnn3FsjlIeRBr0nG4IE3hbBGusmEwvgjY10+pvQ5YYvaP0Evxxhsbc=)
+        pool-name: hikari-cp
+        maximum-pool-size: 10
+        driver-class-name: org.postgresql.Driver
+        username: ENC(0r6ybhjAivjhG34yJQWK9Syeo9LEol1B)
+        password: ENC(UwFuKE2uq6iGkkjJIUF8+/wvioN7RXoF)
+      hobis:
+        jdbc-url: ENC(EMrzfS1Ql6cajQkt3K0xg4s88E6l8HbdC3BEME5j3rjSZ95+bI5eXxsIVTAgEpbNlKW7J0Qk8nI=)
+        pool-name: hikari-cp
+        maximum-pool-size: 10
+        driver-class-name: oracle.jdbc.OracleDriver
+        username: ENC(5l2XUfknPSXrBlxJRCBM/w==)
+        password: ENC(PYvGOgoVjJQceugaF1MWdbC79c3NQKVo)
+  jpa:
+    hibernate:
+      ddl-auto: none  # 없으면 만들고 있으면 그대로 사용
+#    properties:
+#      hibernate:
+#        show_sql: true                #하이버네이트가 실행하는 모든 SQL문을 콘솔로 출력해 준다.
+#        format_sql: true              #콘솔에 출력되는 JPA 실행 쿼리를 가독성있게 표현한다.
+#        use_sql_comments: true        #디버깅이 용이하도록 SQL문 이외에 추가적인 정보를 출력해 준다.
+
+logging:
+  level:
+    com:
+      tifscore: debug
+
+oneqclient:
+  clientId: 1QBatch-LOAN
+  clientSecret: GnFaD1YvLPYTSA8S5E8AhDH5gceXBtm7qK6EQJOpfyY=
+
+batch:
+  timeznoe: Asia/Jakarta
+  onlineIp: http://10.87.190.99/
+
+kafka:
+  bootstrap:
+    server: 10.87.190.117:9092,10.87.190.118:9092,10.87.190.119:9092

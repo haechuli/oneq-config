@@ -9,7 +9,7 @@ spring:
   main:
     web-application-type: none
     allow-bean-definition-overriding: true
-  profiles: uat
+
 
   # Spring Boot 실행시 BATCH 자동 실행 못하게 설정
   batch:
